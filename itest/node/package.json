@@ -1,0 +1,9 @@
+{
+  "name": "sse-server",
+  "description": "server for testing Server sent Event",
+  "version": "0.0.1",
+  "private": true,
+  "dependencies": {
+    "express": "3.x"
+  }
+} 
