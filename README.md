@@ -27,6 +27,8 @@ If you use Cordova command line interface :
 cordova create YourApplication
 - Add an Android platform
 
+cd YourApplication
+
 cordova platform add android
 - Bug in some version of the command line interface
 
