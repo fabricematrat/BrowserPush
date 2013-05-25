@@ -23,15 +23,20 @@ Install
 If you use Cordova command line interface :
 
 - Create an application
- cordova create YourApplication
+
+cordova create YourApplication
 - Add an Android platform
- cordova platform add android
+
+cordova platform add android
 - Bug in some version of the command line interface
- cp -f YourApplication/plugins/BrowserPush/www/browserpush.js YourApplication/www/browserpush.js
+
+cp -f YourApplication/plugins/BrowserPush/www/browserpush.js YourApplication/www/browserpush.js
 - Build your project
- cordova build
+
+cordova build
 - Start the emulator (You need to have an AVD installed)
- cordova emulate
+
+cordova emulate
 
 To test it
 ===========
@@ -41,16 +46,16 @@ Go to itest where you will have an integration test
 TODO
 ===========
 
-- Finish the implementation of Event source
--- Redirection
--- Credentails
--- Test https
--- Test Thread Safety
--- Test Performance
+Finish the implementation of Event source
+- Redirection
+- Credentails
+- Test https
+- Test Thread Safety
+- Test Performance
 
-- Finish the implementation of WebSocket
--- Only the java part is done
--- Need to continue to work on it to be usable.
+Finish the implementation of WebSocket
+- Only the java part is done
+- Need to continue to work on it to be usable.
 
 
 
