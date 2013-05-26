@@ -46,6 +46,16 @@ cp -f YourApplication/plugins/BrowserPush/www/browserpush.js YourApplication/www
   &lt;script type=&quot;text/javascript&quot; src=&quot;cordova.js&quot;&gt;&lt;/script&gt;
   &lt;script type=&quot;text/javascript&quot; src=&quot;browserpush.js&quot;&gt;&lt;/script&gt;
 </pre>
+
+- Add in your index.html an EventSource like for example 
+
+<pre>
+var source = new EventSource('http://googlecodesamples.com/html5/sse/sse.php');
+source.addEventListener('message', function(event) {
+  alert(event.data);
+}, false);
+</pre>
+
   
 - Build your project
 
