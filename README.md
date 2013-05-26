@@ -89,7 +89,11 @@ Finish the implementation of WebSocket
 - Only the java part is done
 - Need to continue to work on it to be usable.
 
+RELEASE NOTES
+================
 
+### 20130526 ###
+* Initial Version
 
 Give it a trial and send us feedback!
 ====================================
