@@ -55,7 +55,7 @@ cp -f plugins/BrowserPush/www/browserpush.js www/browserpush.js
   &lt;script type=&quot;text/javascript&quot; src=&quot;browserpush.js&quot;&gt;&lt;/script&gt;
 </pre>
 
-- Add in your index.html an EventSource like for example 
+- For a small test, add in your js/index.js an EventSource in the deviceready callback the following: 
 
 <pre>
 var source = new EventSource('http://googlecodesamples.com/html5/sse/sse.php');
@@ -64,6 +64,9 @@ source.addEventListener('message', function(event) {
 }, false);
 </pre>
 
+You will connect a test server wich send sever sent event.
+This will pop an alert like in the following documentation :
+http://googlecodesamples.com/html5/sse/sse.html
   
 - Build your project
 
