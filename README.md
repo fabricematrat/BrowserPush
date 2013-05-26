@@ -14,8 +14,9 @@ Prerequisite
 - Android sdk
 - Create an Android virtual device (http://developer.android.com/tools/devices/managing-avds.html)
 - Cordova 2.5 or more
-- Node Package Manager (for test and cli)
-- Node.js (for test and cli)
+- Node Package Manager (for test and cordova CLI)
+- Node.js (for test and cordova CLI)
+- Install Cordova CLI (npm -g install cordova)
 
 
 Install
