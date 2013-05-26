@@ -43,8 +43,8 @@ cp -f YourApplication/plugins/BrowserPush/www/browserpush.js YourApplication/www
 - Include a reference to browserpush.js in your index.html file after cordova.js
 
 <pre>
-  <script type="text/javascript" src="cordova.js"></script>
-  <script type="text/javascript" src="browserpush.js"></script>
+  &lt;script type=&quot;text/javascript&quot; src=&quot;cordova.js&quot;&gt;&lt;/script&gt;
+  &lt;script type=&quot;text/javascript&quot; src=&quot;browserpush.js&quot;&gt;&lt;/script&gt;
 </pre>
   
 - Build your project
