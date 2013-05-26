@@ -62,6 +62,8 @@ To test it
 ===========
 
 Go to itest where you will have an integration test
+itest.sh will create a cordova project, launch it in an emulator. The project itself will test the EventSource with tests influenced by 
+https://github.com/w3c/web-platform-tests/tree/master/eventsource
 
 TODO
 ===========
