@@ -38,7 +38,7 @@ cordova platform add android
 - Add the plugin
 
 <pre>
-cordova plugin add 
+cordova plugin add https://github.com/fabricematrat/BrowserPush.git
 </pre>
 
 - Bug in some version of the command line interface
