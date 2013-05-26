@@ -29,9 +29,9 @@ cordova create YourApplication
 </pre>
 - Add an Android platform
 
-cd YourApplication
 
 <pre>
+cd YourApplication
 cordova platform add android
 </pre>
 
