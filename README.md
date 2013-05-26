@@ -2,7 +2,7 @@ BrowserPush Cordova Plugin
 ========================
 
 Event Source and WebSocket are not implemented in the Android browser.
-Here comes this cordova plugin which allow the usage of SSE and WebSocket for Cordova application.
+This cordova plugin allows the usage of SSE (EventSource) and WebSocket for hybrid application.
 
 For EventSource the implementation should be compliant with the specification
 http://www.w3.org/TR/2012/WD-eventsource-20121023/
@@ -14,8 +14,8 @@ Prerequisite
 - Android sdk
 - Create an Android virtual device (http://developer.android.com/tools/devices/managing-avds.html)
 - Cordova 2.5 or more
-- Node Package Manager for test and cli
-- Node.js for test and cli
+- Node Package Manager (for test and cli)
+- Node.js (for test and cli)
 
 
 Install
@@ -79,8 +79,8 @@ cordova build
 cordova emulate
 </pre>
 
-To test it
-===========
+Run integration test
+====================
 
 Go to itest where you will have an integration test
 itest.sh will create a cordova project, launch it in an emulator. The project itself will test the EventSource with tests influenced by 
