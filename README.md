@@ -12,6 +12,7 @@ Prerequisite
 
 - JDK 5 or 6
 - Android sdk
+- Create an Android virtual device (http://developer.android.com/tools/devices/managing-avds.html)
 - Cordova 2.5 or more
 - Node Package Manager for test and cli
 - Node.js for test and cli
@@ -47,7 +48,7 @@ cordova plugin add https://github.com/fabricematrat/BrowserPush.git
 cp -f plugins/BrowserPush/www/browserpush.js www/browserpush.js
 </pre>
 
-- Include a reference to browserpush.js in your index.html file after cordova.js
+- Include a reference to browserpush.js in your index.html located in the www directory after cordova.js
 
 <pre>
   &lt;script type=&quot;text/javascript&quot; src=&quot;cordova.js&quot;&gt;&lt;/script&gt;
