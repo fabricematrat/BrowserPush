@@ -24,21 +24,39 @@ If you use Cordova command line interface :
 
 - Create an application
 
+<pre>
 cordova create YourApplication
+</pre>
 - Add an Android platform
 
 cd YourApplication
 
+<pre>
 cordova platform add android
+</pre>
 - Bug in some version of the command line interface
 
+<pre>
 cp -f YourApplication/plugins/BrowserPush/www/browserpush.js YourApplication/www/browserpush.js
+</pre>
+
+- Include a reference to browserpush.js in your index.html file after cordova.js
+
+<pre>
+  <script type="text/javascript" src="cordova.js"></script>
+  <script type="text/javascript" src="browserpush.js"></script>
+</pre>
+  
 - Build your project
 
+<pre>
 cordova build
-- Start the emulator (You need to have an AVD installed)
+</pre>
+- Start the emulator (You need to have an AVD created)
 
+<pre>
 cordova emulate
+</pre>
 
 To test it
 ===========
