@@ -44,7 +44,7 @@ cordova plugin add https://github.com/fabricematrat/BrowserPush.git
 - Bug in some version of the command line interface
 
 <pre>
-cp -f YourApplication/plugins/BrowserPush/www/browserpush.js YourApplication/www/browserpush.js
+cp -f plugins/BrowserPush/www/browserpush.js www/browserpush.js
 </pre>
 
 - Include a reference to browserpush.js in your index.html file after cordova.js
