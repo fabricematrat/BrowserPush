@@ -34,6 +34,13 @@ cd YourApplication
 <pre>
 cordova platform add android
 </pre>
+
+- Add the plugin
+
+<pre>
+cordova plugin add 
+</pre>
+
 - Bug in some version of the command line interface
 
 <pre>
