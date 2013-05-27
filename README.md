@@ -43,7 +43,7 @@ cordova platform add android
 // You should be able to do that with plugman but this does not work
 // cordova plugin add https://github.com/fabricematrat/BrowserPush.git
 // So you will have to clone the BrowserPush plugin
-// git clone at $pluginLocation
+// git clone https://github.com/fabricematrat/BrowserPush.git at $pluginLocation (not inside the project)
 cordova plugin add $pluginLocation
 </pre>
 
