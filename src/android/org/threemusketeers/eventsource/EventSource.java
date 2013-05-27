@@ -104,36 +104,4 @@ public class EventSource {
     protected void finalize() throws Throwable {
         this.close();
     }
-
-
-
-    public static void main(String[] args) throws InterruptedException {
-        EventLoopGroup group = new NioEventLoopGroup();
-
-        EventSource es = new EventSource("http://localhost:9090/stream", group, new EventSourceNotification() {
-            //EventSource es = new EventSource("http://googlecodesamples.com:80/html5/sse/sse.php", group, new EventSourceNotification() {
-            //EventSource es = new EventSource("http://localhost:9090/stream", group, new EventSourceNotification() {
-            @Override
-            public void onopen() {
-                System.out.println("Open");
-            }
-
-            @Override
-            public void onmessage(Message message) {
-                System.out.println("Message Received " + message.data + ":");
-            }
-
-            @Override
-            public void onerror(String error) {
-                System.out.println("Error Received " + error);
-            }
-        });
-        System.out.println("after the creation of event source");
-        System.out.println("after the connect");
-        Thread.sleep(10000);
-        System.out.println("after the connect");
-        es.close();
-
-    }
-
 }
