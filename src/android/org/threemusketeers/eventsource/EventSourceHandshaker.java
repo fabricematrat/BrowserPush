@@ -23,6 +23,7 @@ package org.threemusketeers.eventsource;
 
 import io.netty.handler.codec.http.HttpResponseStatus;
 
+import java.util.*;
 import java.util.regex.Matcher;
 
 public class EventSourceHandshaker {
@@ -58,10 +59,54 @@ public class EventSourceHandshaker {
             } else {
                 Matcher m = Constants.CONTENT_TYPE.matcher(content);
                 if (m.find()) {
-                    // Find the MIME Type
+                    // Find the MIME Type javax.activation.MimeType does not exist in android
                     String contentTypeFound = m.group(1);
-                    if (Constants.EVENT_STREAM.equals(contentTypeFound)) {
+                    String basetype = null;
+                    String subtype = null;
+                    String[] mimeTypeSplitted = contentTypeFound.split(";");
+                    if (mimeTypeSplitted.length > 0) {
+                        String mime = mimeTypeSplitted[0].toLowerCase(Locale.ENGLISH);
+                        mime = mime.replace("\\", "");
+                        if (!mime.contains("/")) {
+                            error =  "Unsupported Content Type " + contentTypeFound;
+                            complete = true;
+                            return true;
+                        } else {
+                            String[] split = mime.split("/");
+                            basetype = split[0];
+                            subtype = split[1];
+                        }
+                    }
+
+                    ArrayList<String> parameters = new ArrayList<String>(Arrays.asList(mimeTypeSplitted));
+                    HashMap<String, String> parametersFormatted = new HashMap<String, String>();
+                    parameters.remove(0);
+                    for (Iterator<String> iterator = parameters.iterator(); iterator.hasNext();) {
+                        String param = iterator.next();
+                        String[] splitParam = param.split("=");
+                        if (splitParam.length == 2) {
+                            String name = splitParam[0];
+                            name = name.toLowerCase(Locale.ENGLISH);
+                            String value = splitParam[1];
+                            if (value.startsWith("\"") && value.endsWith("\"")) {
+                                value = value.substring(1, value.length());
+                                value = value.substring(0, value.length() - 1);
+                            }
+                            value = value.toLowerCase(Locale.ENGLISH);
+                            parametersFormatted.put(name, value);
+                        }
+                    }
+                    
+                    if (Constants.EVENT_STREAM.equals(basetype + "/" + subtype)) {
                         contentType = Constants.EVENT_STREAM;
+                        String charSetValue = parametersFormatted.get(Constants.CHARSET);
+                        if (charSetValue != null) {
+                            if (!charSetValue.equals(Constants.UTF8)) {
+                                error =  "Unsupported Content Type " + contentTypeFound;
+                                complete = true;
+                                return true;                                
+                            }
+                        }
                     } else if (Constants.JSON.equals(contentTypeFound)) {
                         contentType = Constants.JSON;
                     } else {

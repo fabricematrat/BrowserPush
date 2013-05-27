@@ -28,6 +28,8 @@ public interface Constants {
     Pattern CONTENT_TYPE = Pattern.compile("Content-Type: (\\S+)");
     String EMPTY_LINE = "";
     String EVENT_STREAM = "text/event-stream";
+    String CHARSET = "charset";
+    String UTF8 = "utf-8";
     String JSON = "application/json";
 
     String EVENT = "event";
